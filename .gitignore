@@ -1,0 +1,8 @@
+.env
+certs
+esdata01
+esdata02
+esdata03
+kibanadata
+logstashdata
+_**
