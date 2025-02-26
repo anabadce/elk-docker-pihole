@@ -170,6 +170,16 @@ services:
 
   logstash:
     build: logstash
+    mem_limit: ${MEM_LIMIT}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s http://localhost:9600",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
     depends_on:
       es01:
         condition: service_healthy
